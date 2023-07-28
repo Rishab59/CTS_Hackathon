@@ -259,6 +259,11 @@ section {
   margin-right: 6px;
 }
 
+#PEC_Techathon_Header{
+  height : auto ;
+  width : 220px ;
+}
+
 .header .logo h1 {
   font-size: 24px;
   font-weight: 700;
