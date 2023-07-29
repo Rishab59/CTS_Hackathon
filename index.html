@@ -47,8 +47,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class = "nav-bar-contents active" href="index.html">Home</a></li>
-          <li><a class = "nav-bar-contents" href="">About</a></li>
-          <li><a class = "nav-bar-contents" href="">Hackathon</a></li>
+          <li><a class = "nav-bar-contents" href="about.html">About</a></li>
+          <li><a class = "nav-bar-contents" href="hackathon_details.html">Hackathon</a></li>
+          <li><a class = "nav-bar-contents" href="register.html">Register</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -66,8 +67,15 @@
             <h5 style = "color: #222428;">Presents</h5>
             <img style = "width : 60%; height: auto;" src = "assets/img/logos/techathon_logo.png">
             <h5 style = "color:#222428;">Powered by</h5>
-            <img style = "width : 30%; height: auto;" src = "assets/img/logos/CTS_Logo.png"><br>
+            <img style = "width : 30%; height: auto;" src = "assets/img/logos/CTS_Logo.png">
+            <div>
+              <p id = "countdown-timer">
+              </p>
+            </div>
             <a data-aos="fade-up" data-aos-delay="200" href="" class="btn-get-started">Register Now</a>
+            <br>
+            <br>
+            <br>
           </div>
         </div>
       </div>
@@ -606,10 +614,10 @@
           <div class="col-lg-3 col-md-3 footer-links">
             <h4><br><br><br><br>Useful Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Hackathon</a></li>
-              <li><a href="#">Register</a></li>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="hackathon_details.html">Hackathon</a></li>
+              <li><a href="register.html">Register</a></li>
               
             </ul>
           </div>
@@ -644,6 +652,36 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    //(format: 'YYYY-MM-DD HH:MM:SS')
+    const targetDateTime = '2023-09-15 09:00:00'; // Replace this with your target date and time
+
+    // Function to update the countdown timer
+    function updateCountdown() {
+      const targetDate = new Date(targetDateTime);
+      const now = new Date();
+      const timeDifference = targetDate - now;
+
+      if (timeDifference > 0) {
+        const seconds = Math.floor((timeDifference / 1000) % 60);
+        const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
+        const hours = Math.floor((timeDifference / 1000 / 60 / 60) % 24);
+        const days = Math.floor(timeDifference / 1000 / 60 / 60 / 24);
+
+        const countdownTimer = document.getElementById('countdown-timer');
+        countdownTimer.textContent = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
+
+        setTimeout(updateCountdown, 1000); // Update the countdown every second
+      } 
+      else {
+        const countdownTimer = document.getElementById('countdown-timer');
+        countdownTimer.textContent = "Countdown has ended!";
+      }
+    }
+
+    // Initial call to start the countdown
+    updateCountdown();
+  </script>
 
 </body>
 
