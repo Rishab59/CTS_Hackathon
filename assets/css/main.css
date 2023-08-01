@@ -1653,7 +1653,8 @@ section {
   height: 56px;
   font-size: 24px;
   line-height: 0;
-  color: var(--color-primary);
+  /*color: var(--color-primary);*/
+  color : #000 ;
   border-radius: 50%;
   border: 2px dotted #ffd565;
 }
