@@ -1854,6 +1854,7 @@ section {
 .box {
   text-align: center;
   padding: 13px;
+  min-width: 50px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -2038,6 +2039,22 @@ section {
     padding: 0 50px;
   }
 }
+
+@media (max-width: 575px) {
+  #tagline{
+    font-size: 14px;;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .top-margin {
+    margin-top: 30px;
+  }
+
+}
+
+
 
 .hero .info h2 {
   color: #fff;

@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="" rel="icon">
-  <link href="" rel="apple-touch-icon">
+  <link href="assets/img/logos/pec.png" rel="icon">
+  <link href="assets/img/logos/pec.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
           <div class="col-lg-8 text-center" data-aos="fade-down">
             <img style = "width : 14%; height: auto;" src = "assets/img/logos/pec.png"><br>
             <img style = "width : 60%; height: auto;" src = "assets/img/logos/techathon_logo.png">
-            <p style = "color:grey;" class = "fst-italic">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Innovation beyond imagination</p>
+            <p id = "tagline" style = "color:grey;" class = "fst-italic">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;- Innovation beyond imagination</p>
             <h5 style = "color:#222428; margin-bottom: 0px;">Powered by</h5>
             <img style = "width : 30%; height: auto; top: 10px;" src = "assets/img/logos/CTS_Logo.png">
 
@@ -348,10 +348,26 @@
         const minsBox = document.getElementById('minutes');
         const secsBox = document.getElementById('seconds');
 
-        daysBox.innerText = `${days} Days`;
-        hoursBox.innerText = `${hours} Hours`;
-        minsBox.innerText = `${minutes} Mins`;
-        secsBox.innerText = `${seconds} Secs`;
+        if (window.innerWidth > 575) 
+        {
+          daysBox.innerText = `${days} Days`;
+          hoursBox.innerText = `${hours} Hours`;
+          minsBox.innerText = `${minutes} Mins`;
+          secsBox.innerText = `${seconds} Secs`;
+        }
+        else {
+          // Update the inner text with reduced font size
+          daysBox.innerText = `${days} Days`;
+          hoursBox.innerText = `${hours} Hours`;
+          minsBox.innerText = `${minutes} Mins`;
+          secsBox.innerText = `${seconds} Secs`;
+      
+          // Reduce font size for smaller screens
+          daysBox.style.fontSize = '11px';
+          hoursBox.style.fontSize = '11px';
+          minsBox.style.fontSize = '11px';
+          secsBox.style.fontSize = '11px';
+        }
 
         daysBox.style.color = '#333';
         hoursBox.style.color = '#333';
