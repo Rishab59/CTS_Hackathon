@@ -784,6 +784,18 @@ section {
   }
 }
 
+@media (max-width : 768px){
+  .contactUsLander{
+    font-size: 20px;
+  }
+}
+
+@media (min-width : 768px) {
+  .contactUsLander{
+    font-size: 35px ;
+  }  
+}
+
 .features .nav-link:hover {
   color: var(--color-primary);
 }
